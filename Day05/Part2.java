@@ -7,7 +7,6 @@ public class Part2 {
 		Scanner sc = new Scanner(System.in);
 
 		String polymer = sc.nextLine();
-
 		String alphabet = "abcdefghijklmnopqrstuvwxyz";
 
 		int minLength = -1;
@@ -23,22 +22,22 @@ public class Part2 {
 			}
 		}
 
-
 		System.out.println(minLength);
-
 		sc.close();
 
 	}
 
 	public static String polymerReact (String polymer) {
 		int initialLength = polymer.length();
-
 		int index = 0;
 
 		while (index < polymer.length()-1) {
-			boolean alternatingCase = (Character.isLowerCase(polymer.charAt(index)) && Character.isUpperCase(polymer.charAt(index+1))) || (Character.isUpperCase(polymer.charAt(index)) && Character.isLowerCase(polymer.charAt(index+1)));
+			boolean sameChar = (Character.toLowerCase(polymer.charAt(index)) == Character.toLowerCase(polymer.charAt(index+1)));
 
-			if (Character.toLowerCase(polymer.charAt(index)) == Character.toLowerCase(polymer.charAt(index+1)) && alternatingCase) {
+			boolean alternatingCase = (Character.isLowerCase(polymer.charAt(index)) && Character.isUpperCase(polymer.charAt(index+1)))
+									|| (Character.isUpperCase(polymer.charAt(index)) && Character.isLowerCase(polymer.charAt(index+1)));
+
+			if (sameChar && alternatingCase) {
 				polymer = polymer.substring(0, index).concat(polymer.substring(index+2, polymer.length()));
 			} else {
 				index++;
