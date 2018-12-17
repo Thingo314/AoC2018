@@ -277,7 +277,6 @@ public class Part2 {
 					break;
 
 				case "eqrr":
-					// int value = 0;
 					if (aReg == bReg) {
 						value = 1;
 					}
