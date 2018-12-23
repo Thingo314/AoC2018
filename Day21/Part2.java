@@ -125,7 +125,7 @@ public class Part2 {
 
 			register[ipRegister] = register[ipRegister]+1;
 			if (register[ipRegister] == 28) {
-				System.out.println(register[1]);
+				// System.out.println(register[1]);
 				if (!targets.add(register[1])) {
 				System.out.println(targets.toArray()[targets.size()-1]);
 				break;
