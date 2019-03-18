@@ -2,3 +2,5 @@
 *.txt
 DayTemplate/
 *.gitignore
+*.sublime-project
+*.sublime-workspace
